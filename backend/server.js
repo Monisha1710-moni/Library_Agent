@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
@@ -9,8 +11,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Watson AI Config
-const WATSON_API_KEY = 'bBrWWqF0CT1WXbZMuBD3kzfewruuJsfXwWpa3VMkwqu0';
-const WATSON_PROJECT_ID = 'c358cdb7-9a41-4535-98dc-522ffe0f953b';
+const WATSON_API_KEY = process.env.WATSON_API_KEY;
+const WATSON_PROJECT_ID = process.env.WATSON_PROJECT_ID;
 const WATSON_MODEL_ID = 'ibm/granite-4-h-small';
 const WATSON_URL = 'https://us-south.ml.cloud.ibm.com/ml/v1/text/chat?version=2023-05-29';
 const WATSON_IAM_URL = 'https://iam.cloud.ibm.com/identity/token';
